@@ -217,7 +217,8 @@ def bot(data):
 # initialization
 time.sleep(1)
 #speak("Hi Frank, what can I do for you?")
-while 1:
-    data = recordAudio()
+
+data = recordAudio()
+
     # con_data = converter(data)
-    bot(data)
+bot(data)
