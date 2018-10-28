@@ -178,7 +178,7 @@ from gtts import gTTS
 
 def speak(audioString):
     print(audioString)
-    tts = gTTS(text=audioString, lang='en')
+    tts = gTTS(text=audioString, lang='hi')
     tts.save("audio.mp3")
     os.system("vlc audio.mp3")
 
@@ -194,7 +194,7 @@ def recordAudio():
     try:
         # Uses the default API key
         # To use another API key: `r.recognize_google(audio, key="GOOGLE_SPEECH_RECOGNITION_API_KEY")`
-        data = r.recognize_google(audio)
+        data = r.recognize_google(audio, language='hi')
         print("You said: " + data)
         print(type(data))
     except sr.UnknownValueError:
@@ -208,10 +208,16 @@ def bot(data):
     ans = response(data)
     speak(ans)
 
+# from googletrans import Translator
+# def converter(data):
+#     translator = Translator()
+#     con_data = translator.translate(data, dest='en')
+#     return con_data
 
 # initialization
 time.sleep(1)
 #speak("Hi Frank, what can I do for you?")
 while 1:
     data = recordAudio()
+    # con_data = converter(data)
     bot(data)
