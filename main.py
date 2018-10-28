@@ -174,8 +174,8 @@ import speech_recognition as sr
 
 import time
 import os
-from gtts import gTTS
 
+from gtts import gTTS
 def speak(audioString):
     print(audioString)
     tts = gTTS(text=audioString, lang='hi')
@@ -186,7 +186,7 @@ def recordAudio():
     # Record Audio
     r = sr.Recognizer()
     with sr.Microphone() as source:
-        print("Say something!")
+        #print("Say something!")
         audio = r.listen(source)
 
     # Speech recognition using Google Speech Recognition
@@ -215,10 +215,10 @@ def bot(data):
 #     return con_data
 
 # initialization
-time.sleep(1)
+#time.sleep(1)
 #speak("Hi Frank, what can I do for you?")
 
-data = recordAudio()
+#data = recordAudio()
 
     # con_data = converter(data)
-bot(data)
+#bot(data)

@@ -1,7 +1,8 @@
 import requests
 from flask import Flask,render_template,json,config,request
 from flask_sqlalchemy import SQLAlchemy
-from main import *
+from main import recordAudio, bot
+#from gtts import gTTS
 app=Flask(__name__)
 app.config['DEBUG']=True
 
@@ -18,9 +19,9 @@ def voice_assistant():
 
     lang_data=lang_data.append(language)
     en_data=lang_data[0]
-    bot(en_data)
+    output = bot(en_data)
 
-    return render_template('index.html',lang_data=lang_data,weather_data=weather_data)
+    return render_template('index.html')
 
 
 
