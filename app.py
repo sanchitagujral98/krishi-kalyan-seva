@@ -17,8 +17,9 @@ def vc():
 
     return render_template('index.html')
 
-@app.route('/vc')
-def record():
+@app.route('/background_process_test')
+def background_process_test():
+
 
     txt='मुझे सब्सिडी पर कुछ जानकारी दीजिए'
     url='https://translate.yandex.net/api/v1.5/tr.json/translate?key=trnsl.1.1.20181027T233108Z.1dcc6673818e795c.6b2bd8112a5f748b44298d1f4ec7785926fad057&lang=en&text='+txt
@@ -33,7 +34,7 @@ def record():
     print(out_str)
 
     output = bot(out_str)
-    return render_template('index.html')
+
 
 
 
