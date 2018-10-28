@@ -205,8 +205,8 @@ def recordAudio():
     return data
 
 def bot(data):
-    ans = response(data)
-    speak(ans)
+    #ans = response(data)
+    speak(data)
 
 # from googletrans import Translator
 # def converter(data):
